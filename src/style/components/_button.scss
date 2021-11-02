@@ -1,0 +1,21 @@
+@use './base';
+
+@mixin button($bg:base.$primary, $font:base.$font-title) {
+    background: $bg;
+    color: base.$white;
+    font-family: $font;
+    min-width: 6.25rem;
+    padding: 0.625rem 1rem;
+    height: 2.5rem;
+    border: 0;
+    border-radius: 52px;
+    color: base.$black;
+
+    a{
+        color: base.$black;
+        letter-spacing: 0.24rem;
+        text-decoration: none;
+        text-transform: capitalize;
+    }
+
+}

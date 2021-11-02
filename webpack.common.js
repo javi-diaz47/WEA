@@ -8,9 +8,20 @@ module.exports = {
 
         new HTMLWebpackPlugin({
             filename: "index.html",
-            template: "./src/template.html",
-        })
-    ],
+            template: "./src/templates/home.html",
+        }),
+
+        new HTMLWebpackPlugin({
+            filename: "register.html",
+            template: "./src/templates/register.html",
+        }),
+
+        new HTMLWebpackPlugin({
+            filename: "login.html",
+            template: "./src/templates/login.html",
+        }),
+
+   ],
 
     module: {
 
@@ -31,9 +42,16 @@ module.exports = {
                 use: ["html-loader"],
             },
 
+            //Load assets
+            {
+                type: 'asset',
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            }
+
         ]
 
     }
 
 
 }
+

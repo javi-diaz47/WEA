@@ -1,0 +1,20 @@
+@use './base';
+
+.header{
+    height: 4.5rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    padding: 0rem 2rem;//32px
+    border-bottom: 2px solid base.$black;
+
+    img{
+        height: 2rem;
+    }
+
+    .btn{
+        justify-self: end;
+    }
+    
+}
+
