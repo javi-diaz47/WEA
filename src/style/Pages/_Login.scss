@@ -9,74 +9,6 @@
     gap: 2rem; 
 
     form{
-        width: 80%;
-        position: relative;
-        left: 50%;
-        transform: translate(-50%);
-
-        padding: 1rem;
-
-        background: #FFFFFF;
-        box-shadow: 20px 20px 60px #D9D9D9, -20px -20px 60px #FFFFFF;
-        border-radius: 30px;
-
-        h2{
-            text-align: center;
-            margin: 0;
-            margin-bottom: 1rem;
-
-        }
-
-        .inputs{
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-    
-            img{
-                width: 1.3rem;
-                height: 1.3rem;
-            }
-
-            label{
-                margin-bottom: 0.25rem;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-            }
-            
-            input{
-                margin-bottom: 2rem;
-
-                width: 80%;
-                position: relative;
-                left: 1.8rem;
-                font-size: 1rem;
-                font-family: base.$font-text;
-                border: 0;
-                border-bottom: 0.06rem solid base.$black;
-                outline: none;
-            }
-
-            input:hover{
-                border-color: base.$primary;
-            }
-
-        }
-
-
-        input[type="submit"]{
-            @include button.button();
-            font-family: base.$font-title;
-            font-weight: bold;
-
-            position: absolute;
-
-            bottom: -1.25rem;
-            left: 50%;
-            transform: translate(-50%);
-        }
-
         .login-with{
             display: flex;
             flex-direction: column;
@@ -101,11 +33,10 @@
             }
 
             button:nth-last-child(1){
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
             }
 
         }
-
 
     }
 
