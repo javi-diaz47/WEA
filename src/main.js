@@ -1,6 +1,6 @@
 import Home from './app/Pages/Home';
 import Register from './app/Pages/Register';
-import Login from './app/Pages/login';
+import Login from './app/Pages/Login';
 import './style/main.scss';
 
 

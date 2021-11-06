@@ -3,6 +3,8 @@
 @use './components/Header';
 @use './components/Footer';
 @use './Pages/Home';
+@use './Pages/Register';
+@use './Pages/Login';
 
 body{
     margin: 0;
@@ -11,6 +13,7 @@ body{
     background-color: base.$white;
     font-family: base.$font-text;
     letter-spacing: 0.24rem;
+    position: relative;
 
     .btn{
         @include button.button();
