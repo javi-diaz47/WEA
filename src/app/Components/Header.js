@@ -12,7 +12,9 @@ class Header{
         // $logo.src = logo;
 
         const $logo = `
-            <img src="${logo}">
+            <a href="./">
+                <img src="${logo}" >
+            </a>
         `;
 
         this.$header.innerHTML += $logo;
