@@ -29,13 +29,13 @@ class Home {
             <div class="buttons">        
                 ${ new Button({
                     title: "registrame",
-                    anchor: "anchor",
+                    anchor: "./register.html",
                     className: "btn"
                 }).getBtn}
                 
                 ${ new Button({
                     title: "Sobre nosotros",
-                    anchor: "anchor",
+                    anchor: "./projectsHome.html",
                     className: "btn about-us-btn"
                 }).getBtn} 
 

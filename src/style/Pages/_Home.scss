@@ -32,6 +32,14 @@
     .about-us-btn{
         @include button.button(base.$tertiary);
     }
+
+    .footer{
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
     
 }
 

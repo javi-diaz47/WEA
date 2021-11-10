@@ -2,6 +2,7 @@ import Home from './app/Pages/Home';
 import Register from './app/Pages/Register';
 import Login from './app/Pages/Login';
 import './style/main.scss';
+import ProjectsHome from './app/Pages/ProjectsHome';
 
 
 const $body = document.querySelector('body');
@@ -18,6 +19,10 @@ const pages = [
         {
             name: 'login',
             content: new Login()
+        },
+        {
+            name: 'projectsHome',
+            content: new ProjectsHome()
         }
     ];
 

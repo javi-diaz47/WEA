@@ -12,4 +12,4 @@ const FormLabel = (props) => {
 
 }
 
-export default FormLabel
+export default FormLabel;
