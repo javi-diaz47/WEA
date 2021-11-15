@@ -1,20 +1,24 @@
 const express = require('express');
 const morgan = require('morgan');
-const path = require('path');
 const mysql = require('mysql');
 const myConnection = require('express-myconnection');
+const cors = require('cors');
+
 
 const app = express();
 
+
 //Importing routes
 const usersRoutes = require('./routes/users');
-
 
 //Settings
 app.set('port', process.env.PORT || 3000);
 
 
+
+
 //Middleware - they're just functions
+app.use(cors());
 app.use(morgan('dev'));
 app.use(myConnection(mysql, {
     host: 'localhost',
@@ -24,12 +28,15 @@ app.use(myConnection(mysql, {
     database: 'wea'
 }, 'single'));
 
-
 //routes
-app.use('/', usersRoutes);
 
-//Static files
-app.use(express.static(path.join(__dirname, )))
+app.use(express.json());
+app.use(express.json({
+    type: ['application/json', 'text/plain']
+  }));
+app.use(express.urlencoded({extended: true}));
+
+app.use('/', usersRoutes);
 
 
 app.listen(3000,  () => {

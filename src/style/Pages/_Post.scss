@@ -1,0 +1,56 @@
+@use '../components/base';
+
+.projectsPost{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 2rem;
+    scroll-behavior: scroll;
+    position: relative;
+   
+    .wrapper{
+        border: solid black;
+        align-items: center;
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        line-height:15px;
+    }
+    .title{
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    }
+    .img_f{
+        display: flex;
+        justify-content: center;
+        background-color: #00000060;
+    
+    }
+    .desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    }
+    .desc title-desc{
+        font-weight: 700px;
+    }
+    .p-desc{
+    font-weight: 400;}
+    
+    .category{
+       display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .base_cost{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height:15px;
+    }
+    .base_cost p{
+        font-weight: 400;
+    }
+   
+}

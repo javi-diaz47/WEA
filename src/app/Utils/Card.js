@@ -1,16 +1,22 @@
 const FormLabel = (props) => {
 
-    const {img} = props;
+    const {category, img} = props;
+    
+    const $btn = document.createElement('button');
+    $btn.onclick = () => {
+        sessionStorage.setItem('post', category);
+    }
 
-    return`
-        <article>
-            <a href="./">
-                <figure>
-                        <img src="${img}">
-                </figure>
-            </a>
-         </article>
+    $btn.innerHTML += `
+        <a href="./projectsPost.html">
+            <figure>
+                    <img src="${img}">
+            </figure>
+        </a>
+ 
     `
+    
+    return $btn;
 
 }
 

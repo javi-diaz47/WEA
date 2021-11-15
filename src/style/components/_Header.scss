@@ -15,6 +15,33 @@
     .btn{
         justify-self: end;
     }
-    
+
+    .burger-btn{
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        border: 0;
+        z-index: 10;
+        transition: .4s;
+        position: fixed;
+        right: 2rem;
+        top: 1.125rem;
+        cursor: pointer;
+    }
+
+    .burger-btn-active{
+        path{
+            fill: base.$primary;
+        }
+        transform: rotate(-180deg);
+    }
+
 }
+
+
+
+
+
+
+
 

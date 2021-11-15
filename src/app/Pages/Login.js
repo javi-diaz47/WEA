@@ -38,8 +38,10 @@ class Login{
             },
         ];
 
-        this.$login.innerHTML += `
-            <form method="get">
+        const $form = document.createElement('form');
+        $form.method = "post";
+        $form.action = 'http://localhost:3000/login';
+        $form.innerHTML += `
                 <h2>Ingresar</h2>
                 <div class="inputs">
                     ${inputs.map(FormLabel).join(' ')}
@@ -59,15 +61,32 @@ class Login{
                     </button>
                 </div>
                <input type="submit" value="Ingresar" class="btn">
-           </form>
         `
+        
+        const url = 'http://localhost:3000/login';
+            
+        $form.addEventListener('submit', async (ev) => {
+            ev.preventDefault();
+            const formData = new FormData($form);
+            
+            const res = await fetch(url, {
+                method: "POST",
+                body: formData,
+            });
+            
+            const loginStatus  = (await res.json());
+
+            if(await loginStatus.status == false){
+                alert('email or password are incorrect');
+            }else{
+                sessionStorage.setItem('user', JSON.stringify(loginStatus));
+                document.location.href = "./projectsHome.html";
+            }
+            
+        })
 
 
-
-
-
-
-
+        this.$login.appendChild($form);
         this.$login.appendChild(new Footer());
 
         return this.$login;

@@ -1,11 +1,15 @@
 @use './components/base';
 @use './components/button';
+@use './components/Navbar';
 @use './components/Header';
 @use './components/Footer';
 @use './Pages/Home';
 @use './Pages/Register';
 @use './Pages/Login';
 @use './Pages/ProjectsHome';
+@use './Pages/ProjectsPost';
+@use './Pages/IndividualPost';
+
 
 body{
     margin: 0;

@@ -1,10 +1,12 @@
 @use '../components/base';
 
+
 .projectsHome{
     display: flex;
     flex-direction: column;
     gap: 2rem;
     scroll-behavior: scroll;
+    position: relative;
 
     h2{
         font-family: base.$font-text;
@@ -12,7 +14,7 @@
         font-size: 1.125rem;
         text-align: center;
     }
-
+   
     section{
         display: grid;
         height: 100%;
@@ -22,7 +24,7 @@
         gap: 3rem 1rem;
         margin-bottom: 3rem;
 
-        article{
+        button{
             display: flex;
             width: 100%;
             padding-top: 100%;
@@ -32,6 +34,7 @@
             background-color: #00000020;
             position: relative;
             border-radius: 2rem;
+            border: 0;
             transition: .3s;
 
             figure{

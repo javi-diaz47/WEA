@@ -19,6 +19,10 @@ class Button {
         return this.$button;
     }
 
+    setOnclick(func){
+        this.$button.onclick = () => func;
+    }
+
 }
 
 export default Button;

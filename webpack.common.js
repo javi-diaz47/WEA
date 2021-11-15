@@ -26,6 +26,31 @@ module.exports = {
             template: "./src/templates/projectsHome.html",
         }),
 
+        new HTMLWebpackPlugin({
+            filename: "projectsPost.html",
+            template: "./src/templates/projectsPost.html",
+        }),
+
+        new HTMLWebpackPlugin({
+            filename: "individualPost.html",
+            template: "./src/templates/individualPost.html",
+        }),
+
+        new HTMLWebpackPlugin({
+            filename: "currentProjects.html",
+            template: "./src/templates/currentProjects.html",
+        }),
+
+        new HTMLWebpackPlugin({
+            filename: "advances.html",
+            template: "./src/templates/advances.html",
+        }),
+
+
+
+
+
+
    ],
 
     module: {

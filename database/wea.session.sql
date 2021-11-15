@@ -1,4 +1,6 @@
-
+SELECT email, password FROM Users
+WHERE email='janeDoe@gmail.com'
+;
 
 --@block
 CREATE TABLE Users(
@@ -135,3 +137,12 @@ INSERT INTO Project_privacy(name)
 VALUES 
     ('public'),
     ('privacy');
+
+--@block
+--Get the user as colaborator in a project
+SELECT * FROM Users
+INNER JOIN Colaborators
+INNER JOIN Project
+ON Users.id = Colaborators.user_id
+AND Project.id = Colaborators.project_id;
+

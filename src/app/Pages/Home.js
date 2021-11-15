@@ -18,7 +18,7 @@ class Home {
 
         this.$home.appendChild(new Header({
             btnTitle: "Ingresar",
-            btnUrl: './register.html',
+            btnUrl: './login.html',
             btnClassName: "btn",
         }));
 
