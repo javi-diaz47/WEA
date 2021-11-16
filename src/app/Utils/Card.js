@@ -1,4 +1,4 @@
-const FormLabel = (props) => {
+const Card = (props) => {
 
     const {category, img} = props;
     
@@ -20,4 +20,4 @@ const FormLabel = (props) => {
 
 }
 
-export default FormLabel;
+export default Card;

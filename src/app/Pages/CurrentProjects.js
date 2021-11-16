@@ -5,88 +5,131 @@ import empty from '../../style/assets/images/empty.png';
 class CurrentProjects{
 
     $currentProjects = document.createElement('wrapper');
-    url = 'http://localhost:3000/post';
+    url = 'http://localhost:3000/myProjects';
     post;
+    user;
 
     constructor(){
 
         this.$currentProjects.className = 'currentProjects';
 
         // this.projects = JSON.parse(sessionStorage.getItem('individualPost'));
+        this.user = JSON.parse(sessionStorage.getItem('user'));
+
 
         this.$currentProjects.appendChild(new Navbar());
 
         this.$currentProjects.appendChild(new Header());
 
+        // const $btn = document.createElement('button');
+        // $btn.textContent = 'damn man';
+        // const url = 'http://localhost:3000/myProjects';
+        // $btn.onclick = async () => {
 
-        
+        //     const res = await fetch(url, {
+        //         method: 'POST',
+        //         body: JSON.stringify({id: this.user.id})
+        //     })
 
-
-        // if(this.post){
-
-        //     const section = document.createElement('section');
-        //     section.appendChild(this.renderPost(this.post));
-        //     this.$individualPost.appendChild(section);
+        //     const data = await res.json();
+        //     console.error(data);
 
         // }
 
-        // this.loadProjects();
+        // this.$currentProjects.appendChild($btn);
+
+        this.loadProjects();
 
         return this.$currentProjects;
 
     }
 
+    isEmpty(){
+        return `
+            <h2 class="title-empty">Aun no tienes ningun proyecto</h2>
+            <img src="${empty}">
+        `
+    }
+
     async loadProjects(){
         
-        const posts = await this.getProjects();
+        const projects = await this.getProjects();
 
-            if(posts.length == 0){
+        const section = document.createElement('section');
+
+            if(projects.length == 0){
+                
+                section.innerHTML += this.isEmpty();
 
             }else{
-
-                const section = document.createElement('section');
-                const $posts = posts.map(this.renderPrjects);
+                
+                const articleOpen = document.createElement('article');
+                const projectsOpen = projects.filter(project => project.status != 'close');
+                const $projectsOpen = projectsOpen.map(p => this.renderProjects(p));
  
-                section.innerHTML += `
-                    <h2 class="title">${this.category}</h2>
+                articleOpen.innerHTML += `
+                    <h2 class="title">Proyectos Activos</h2>
                 `
+                if(projectsOpen.length == 0){
+                    articleOpen.innerHTML += this.isEmpty();
+                }else{
+                    $projectsOpen.forEach($project => articleOpen.appendChild($project, $project.status != 'close'));
+                }
+                section.appendChild(articleOpen);
 
-                $posts.forEach($post => section.appendChild($post));
 
-                this.$projectsPost.appendChild(section);
+                const articleClose = document.createElement('article');
+                const projectsClose = projects.filter(project => project.status == 'close');
+                const $projectsClose = projectsClose.map(this.renderProjects);
+
+                articleClose.innerHTML += `
+                    <h2 class="title">Proyectos Finalizados</h2>
+                `
+                if(projectsClose.length == 0){
+                    articleClose.innerHTML += this.isEmpty();
+                }else{
+                    $projectsClose.forEach($project => articleClose.appendChild($project, $project.status != 'close'));
+                }
+                section.appendChild(articleClose);
+
             }
+
+        this.$currentProjects.appendChild(section);
        
     }
 
-    renderPost(post){
-
-        const {title, base_cost} = post;
+    renderProjects(project){
+        
+        const {name} = project;
 
         const $btn = document.createElement('button');
-        $btn.className = 'btn-post';
-        $btn.onclick = () => sessionStorage.setItem('individualPost', JSON.stringify(post));
+        $btn.className = 'open-card';
+        $btn.addEventListener('click', () => {
+            sessionStorage.setItem('project', JSON.stringify(project));
+            alert('boy')
+        })
         
         $btn.innerHTML += `
-            <a href="/individualPost.html">
-                <h2 class="project">${title}</h2>
-                <h2 class="project2">${base_cost}$</h2>
+            <a href="/advances.html">
+                <h2>${name}</h2>
+                <div class="btn">Abrir</div> 
             </a>
         `
 
         return $btn;
+
     }
 
     async getProjects(){
 
-        const response = await fetch(this.url, {
+        const res = await fetch(this.url, {
             method: 'POST',
-            body: JSON.stringify({category: this.category}),
-        });
+            body: JSON.stringify({id: this.user.id})
+        })
 
+        const projects = await res.json();
 
-        const posts = await response.json();
-
-        return posts;
+        return projects;
 
     }
     

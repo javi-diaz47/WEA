@@ -35,7 +35,6 @@ class ProjectsPost{
         const posts = await this.getPost();
 
             if(posts.length == 0){
-
                
                 const section = document.createElement('section');
                 section.innerHTML += `

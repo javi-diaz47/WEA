@@ -1,63 +1,85 @@
 import Header from '../Components/Header';
 import Navbar from '../Components/Navbar';
 import empty from '../../style/assets/images/empty.png';
+import check from '../../style/assets/icons/check.svg';
+import upload from '../../style/assets/icons/upload.svg';
+import chat from '../../style/assets/icons/inbox.svg';
 
 class Advances{
 
-    $individualPost = document.createElement('wrapper');
+    $advances = document.createElement('wrapper');
     url = 'http://localhost:3000/post';
-    post;
+    advance;
 
     constructor(){
 
-        this.$individualPost.className = 'individualPost';
+        this.$advances.className = 'advances';
 
-        this.post = JSON.parse(sessionStorage.getItem('individualPost'));
+        this.advance = JSON.parse(sessionStorage.getItem('project'));
 
-        this.$individualPost.appendChild(new Navbar());
+        this.$advances.appendChild(new Navbar());
 
-        this.$individualPost.appendChild(new Header());
+        this.$advances.appendChild(new Header());
 
+        const section = document.createElement('section');
 
-        if(this.post){
-
-            const section = document.createElement('section');
-            section.appendChild(this.renderPost(this.post));
-            this.$individualPost.appendChild(section);
-
+        if(this.advance){
+            this.$advances.appendChild(this.render(this.advance));
+        }else{
+            section.innerHTML += `
+                <img src="${empty}">
+            `
         }
-        return this.$individualPost;
+
+        return this.$advances;
 
     }
 
         
-    renderPost(post){
+    render(project){
 
-        const {title, description, category, base_cost} = post;
+        const {name} = project;
 
-        const $btn = document.createElement('article');
-        $btn.className = 'post';
+        const $section = document.createElement('section');
+        $section.innerHTML += `
 
-        $btn.innerHTML += `
-            <h2 class="title">${title}</h2>
-            <section class="desc">
-                <h2 class="title-desc">Descripcion</h2>
-                <p class="">${description}</p>
+            <h2 class="title">${name}</h2>
+
+            <section class="progress">
+
+                <div id="deliver" class="circle" status="true">
+                    <img src="${check}">
+                    <p> Entregado </p> 
+                </div>
+
+                <div id="deliver" class="circle">
+                    <img src="${check}">
+                    <p> Aprobaco </p> 
+                </div>
+
+                <div id="deliver" class="circle">
+                    <img src="${check}">
+                    <p> Pagado </p> 
+                </div>
+
             </section>
-            <section class="category">
-                <h2 class="title-category">Categoria</h2>
-                <p class="">${category}</p>
-            </section>
-            <section class="base_cost">
-                <h2 class="title-base_cost">Costo Base</h2>
-                <p class="">${base_cost}$</p>
-            </section>
-    
-            <button class="btn">Postularse</button>    
 
-        `
+            <section class="upload-chat">
+                <div>
+                    <h2>Entregar</h2>
+                    <img src="${upload}";
+                </div>
+                <div>
+                    <h2>Chat</h2>
+                    <img src="${chat}";
+                </div>
+            <section>
+            
+        `;
 
-        return $btn;
+
+        return $section;
+
     }
 
 

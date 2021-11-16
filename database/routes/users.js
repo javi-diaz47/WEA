@@ -15,6 +15,9 @@ router.get('/post', controller.listPost);
 
 router.post('/post', upload.none(), controller.listPostCategory);
 
+// Users and Projects
+router.post('/myProjects', upload.none(), controller.myProjects);
+
 // router.post('/post_id', upload.none(), controller.postId);
 
 // router.post('/post', controller.listPostCategory);

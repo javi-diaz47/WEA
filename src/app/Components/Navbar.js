@@ -1,5 +1,4 @@
 import edit from '../../style/assets/icons/edit-user.svg';
-import handshake from '../../style/assets/icons/offer-service.svg';
 import message from '../../style/assets/icons/message.svg';
 import check from '../../style/assets/icons/check.svg';
 

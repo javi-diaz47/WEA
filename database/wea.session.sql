@@ -139,10 +139,26 @@ VALUES
     ('privacy');
 
 --@block
---Get the user as colaborator in a project
-SELECT * FROM Users
+SELECT * FROM Project_status
+INNER JOIN Project
+ON Project.project_status_id = Project_status.id;
+
+--@block
+SELECT * FROM Project_status
+
+
+--@block
+SELECT 
+    Project.name AS name,
+    Project_status.name AS project_status
+FROM Users
 INNER JOIN Colaborators
 INNER JOIN Project
+INNER JOIN Project_status
 ON Users.id = Colaborators.user_id
-AND Project.id = Colaborators.project_id;
+AND Project.id = Colaborators.project_id
+AND Project.project_status_id = Project_status.id
+AND Users.id = 1;
 
+--@block
+SELECT * FROM Project;
