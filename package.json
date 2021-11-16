@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "firebase": "^9.4.1",
     "multer": "^1.4.3"
   }
 }

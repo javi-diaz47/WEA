@@ -1,0 +1,113 @@
+@use '../components/base';
+
+
+.advances{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 2rem;
+    scroll-behavior: scroll;
+    position: relative;
+
+    .title{
+        font-size: 2rem;
+    }
+
+    section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .progress{
+        display: flex;
+        flex-direction: row;
+        
+        .circle{
+            width: 4rem;
+            height: 4rem;
+            background-color: #00000040;
+            border-radius: 50%;
+            position: relative;
+            margin: 1rem;
+            gap: 4rem;
+
+            img{
+                position: absolute;
+                left: 50%;
+                top: -1rem;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+            }
+
+            p{
+                position: absolute;
+                left: 50%;
+                bottom: -3.4rem;
+                transform: translate(-50%, -50%);
+                font-size: 0.9rem;
+            }
+
+        }
+
+    }
+
+
+    section{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .upload-chat{
+        margin: 2rem 0;
+    }
+
+    a{
+        text-decoration: none;
+        color: base.$black;
+        display: flex;
+        gap: 4rem;
+    }
+
+    div{
+        display: grid;
+        width: 43%;
+        grid-template-columns: 3fr 1fr;
+        align-items: center;
+        gap: 1rem;
+
+        h2{
+            justify-self: start;
+            font-weight: normal;
+        }
+
+        img{
+            display: grid;
+            justify-self: end;
+        
+        }
+
+    }
+
+    .circle[status="true"]{
+        background-color: base.$primary;
+        font-weight: bold;
+
+        img{
+            opacity: 1;
+        }
+
+    }
+
+    .bar::before{
+        content: '';
+        width: 100%;
+        height: 10px;
+        background-color: #00000040;
+        position: absolute;
+        left: -100%;
+    }
+}

@@ -5,7 +5,7 @@ import check from '../../style/assets/icons/check.svg';
 import upload from '../../style/assets/icons/upload.svg';
 import chat from '../../style/assets/icons/inbox.svg';
 
-class Advances{
+class MyProjects{
 
     $advances = document.createElement('wrapper');
     url = 'http://localhost:3000/post';
@@ -31,6 +31,8 @@ class Advances{
             `
         }
 
+        this.$advances.innerHTML += `MESSAGE`
+
         return this.$advances;
 
     }
@@ -42,7 +44,7 @@ class Advances{
 
         const $section = document.createElement('section');
         $section.innerHTML += `
-
+            THIS IS MESSAGE 
             <h2 class="title">${name}</h2>
 
             <section class="progress">
@@ -52,12 +54,12 @@ class Advances{
                     <p> Entregado </p> 
                 </div>
 
-                <div id="deliver" class="circle bar">
+                <div id="deliver" class="circle">
                     <img src="${check}">
                     <p> Aprobaco </p> 
                 </div>
 
-                <div id="deliver" class="circle bar">
+                <div id="deliver" class="circle">
                     <img src="${check}">
                     <p> Pagado </p> 
                 </div>
@@ -65,19 +67,15 @@ class Advances{
             </section>
 
             <section class="upload-chat">
-                <a>
-                    <div class="upload">
-                        <h2>Entregar</h2>
-                        <img src="${upload}">
-                    </div>
-                </a>
-               <a href="message.html">
-                    <div class="chat">
-                        <h2>Chat</h2>
-                        <img src="${chat}";
-                    </div>
-                </a>
-           <section>
+                <div>
+                    <h2>Entregar</h2>
+                    <img src="${upload}";
+                </div>
+                <div>
+                    <h2>Chat</h2>
+                    <img src="${chat}";
+                </div>
+            <section>
             
         `;
 
@@ -90,4 +88,4 @@ class Advances{
     
 }
 
-export default Advances;
+export default MyProjects;

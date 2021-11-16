@@ -1,6 +1,8 @@
 import edit from '../../style/assets/icons/edit-user.svg';
 import message from '../../style/assets/icons/message.svg';
 import check from '../../style/assets/icons/check.svg';
+import user1 from '../../style/assets/images/user1.png';
+import projectImg from '../../style/assets/images/project.png';
 
 class Navbar {
 
@@ -14,14 +16,14 @@ class Navbar {
 
         const list = [
             {
-                title: 'Editar Perfil',
+                title: 'Mi Perfil',
                 icon: edit,
-                href: 'advances.html'
+                href: 'profile.html'
             },
             {
                 title: 'Mensajes',
                 icon: message,
-                href: 'advances.html'
+                href: 'message.html'
             },
             {
                 title: 'Proyectos Actuales',
@@ -36,9 +38,9 @@ class Navbar {
         if(user){
             this.$navbar.innerHTML += `
                     <figure>
-                        <img src="">
+                        <img src="${user1}">
                     </figure>
-                    <h2 class="username">${user.name}</h2>
+                    <h2 id="username">${user.name}</h2>
                     <ul>
                         ${list.map(this.createLi).join(' ')}
                     </ul>

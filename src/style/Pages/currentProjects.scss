@@ -1,0 +1,71 @@
+@use '../components/base';
+
+
+.currentProjects{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 2rem;
+    scroll-behavior: scroll;
+    position: relative;
+
+    section{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    article{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        button{
+            width: 80%;
+            height: 10rem;
+            padding: 0 2rem;
+            background-color: base.$white;
+            border: 0;
+            border-radius: 1.4rem;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            transition: .4s;
+
+            a{
+                color: base.$black;
+                text-decoration: none;
+            }
+            a:active{
+                background-color: transparent;
+            }
+            .btn{
+                font-weight: bold;
+                border-radius: 1.2rem;
+                height: 2rem;
+                font-size: 1.2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        button:active{
+            transform: translate(-2.5px, -2.5px);
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0));
+        }
+
+    }
+
+
+    .title-empty{
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: normal;
+        padding: 0 2rem;
+    }
+
+    article{
+        img{
+            width: 10rem;
+        }
+    }
+    
+}

@@ -2,7 +2,6 @@ const controller = {};
 
 // USERS
 
-
 controller.list = (req, res) => {
     req.getConnection((err, conn) => {
         conn.query('SELECT * FROM Users', (err, users) => {
@@ -104,6 +103,7 @@ controller.listPostCategory = (req, res) => {
 controller.myProjects = (req, res) => {
     
     // const data = JSON.parse(JSON.stringify(req.body)));
+    console.log('REQUEST BODy')
     console.log(req.body);
 
     if(req.body != undefined){
@@ -145,6 +145,8 @@ controller.myProjects = (req, res) => {
     }
 
 }
+
+
 
 
 

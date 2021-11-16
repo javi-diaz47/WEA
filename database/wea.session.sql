@@ -161,4 +161,12 @@ AND Project.project_status_id = Project_status.id
 AND Users.id = 1;
 
 --@block
-SELECT * FROM Project;
+SELECT * FROM Users;
+
+
+
+--@block
+Describe Users
+--@block
+ALTER TABLE Users
+MODIFY COLUMN picture TEXT;

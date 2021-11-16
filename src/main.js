@@ -7,6 +7,11 @@ import ProjectsPost from './app/Pages/ProjectsPost';
 import IndividualPost from './app/Pages/IndividualPost';
 import Advances from './app/Pages/Advances';
 import CurrentProjects from './app/Pages/CurrentProjects';
+import Profile from './app/Pages/Profile';
+import Message from './app/Pages/Message';
+import MyProjects from './app/Pages/MyProjects';
+
+
 
 const $body = document.querySelector('body');
 
@@ -43,8 +48,18 @@ const pages = [
             name: 'currentProjects',
             content: new CurrentProjects()
         },
-
-
+        {
+            name: 'profile',
+            content: new Profile()
+        },
+        {
+            name: 'message',
+            content: new Message() 
+        },
+        {
+            name: 'myProjects',
+            content: new MyProjects()
+        }
 
     ];
 
@@ -58,3 +73,4 @@ for(const page of pages){
     }
         
 }
+

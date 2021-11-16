@@ -21,24 +21,11 @@ class CurrentProjects{
 
         this.$currentProjects.appendChild(new Header());
 
-        // const $btn = document.createElement('button');
-        // $btn.textContent = 'damn man';
-        // const url = 'http://localhost:3000/myProjects';
-        // $btn.onclick = async () => {
 
-        //     const res = await fetch(url, {
-        //         method: 'POST',
-        //         body: JSON.stringify({id: this.user.id})
-        //     })
+        if(this.user){
+            this.loadProjects();
+        }
 
-        //     const data = await res.json();
-        //     console.error(data);
-
-        // }
-
-        // this.$currentProjects.appendChild($btn);
-
-        this.loadProjects();
 
         return this.$currentProjects;
 
